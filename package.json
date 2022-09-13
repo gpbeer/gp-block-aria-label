@@ -1,0 +1,53 @@
+{
+	"name": "gp-block-aria-label",
+	"version": "1.0.0",
+	"description": "WordPress Gutenberg blocks package.",
+	"author": "German Pichardo",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"gutenberg",
+		"blocks",
+		"extension"
+	],
+	"browserslist": [
+		"last 40 versions"
+	],
+	"homepage": "https://github.com/german-pichardo/gp-block-aria-label",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/german-pichardo/gp-block-aria-label"
+	},
+	"bugs": {
+		"url": "https://github.com/german-pichardo/gp-block-aria-label/issues"
+	},
+	"main": "index.js",
+	"devDependencies": {
+		"@wordpress/editor": "^12.15.0",
+		"@wordpress/i18n": "^4.16.0",
+		"@wordpress/scripts": "^24.0.0",
+		"browser-sync": "^2.26.7",
+		"browser-sync-webpack-plugin": "^2.2.2",
+		"classnames": "^2.2.6",
+		"npm-run-all": "^4.1.5",
+		"prettier": "npm:wp-prettier@^2.0.5"
+	},
+	"scripts": {
+		"build": "npm-run-all makepot build-assets",
+		"build-assets": "wp-scripts build",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses",
+		"format:js": "wp-scripts format",
+		"lint:all": "npm run format:js && npm run lint:php:fix",
+		"lint:js": "wp-scripts lint-js",
+		"lint:js:fix": "wp-scripts lint-js --fix",
+		"lint:php": "composer lint",
+		"lint:php:fix": "composer lint:fix",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"packages-update": "wp-scripts packages-update",
+		"prettier:js": "prettier --write",
+		"start": "wp-scripts start",
+		"makepot": "wp i18n make-pot . languages/gp-block-aria-label.pot --exclude=node_modules,vendor,build",
+		"postinstall": "wp-scripts build && composer install"
+	}
+}

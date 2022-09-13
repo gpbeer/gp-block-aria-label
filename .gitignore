@@ -1,0 +1,14 @@
+**/node_modules/**
+**/vendor/**
+**/build/**
+local.json
+coverage
+cypress
+node_modules
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+.ftppass
+*.cache
+*.map
+#/build

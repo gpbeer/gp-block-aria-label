@@ -1,0 +1,47 @@
+{
+	"name": "gp/gp-block-aria-label",
+	"description": "Adds aria label field to Gutenberg Blocks..",
+	"type": "wordpress-plugin",
+	"authors": [
+		{
+			"name": "German Pichardo"
+		}
+	],
+	"license": "proprietary",
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+	"support": {
+		"source": "https://github.com/german-pichardo/gp-block-aria-label"
+	},
+	"require": {
+		"php": ">=7.3"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.5",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"wp-coding-standards/wpcs": "^2.1"
+	},
+	"scripts": {
+		"lint": "\"./vendor/bin/phpcs\"",
+		"lint:fix": "\"./vendor/bin/phpcbf\"",
+		"install-hooks": [
+			"cp -Rf ./bin/pre-commit .git/hooks",
+			"chmod +x .git/hooks/pre-commit"
+		],
+		"pre-install-cmd": [
+			"@install-hooks"
+		]
+	},
+	"extra": {
+		"installer-paths": {
+			"../{$name}/": [
+				"type:wordpress-plugin"
+			]
+		}
+	}
+}

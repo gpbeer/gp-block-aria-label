@@ -7,9 +7,9 @@ import classnames from 'classnames';
  * WordPress Dependencies
  */
 import { InspectorAdvancedControls } from '@wordpress/block-editor';
-import { TextControl } from '@wordpress/components';
+import { SelectControl, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import { addFilter } from '@wordpress/hooks';
+import { addFilter, applyFilters } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
 
 /**
@@ -34,6 +34,10 @@ function addAttributes( settings ) {
 			type: 'string',
 			default: '',
 		},
+		htmlAttribute: {
+			type: 'string',
+			default: '',
+		},
 	} );
 
 	return settings;
@@ -50,9 +54,23 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 	return ( props ) => {
 		if ( isAllowedBlock( props.name ) && props.isSelected ) {
 			const { attributes, setAttributes } = props;
-			const { ariaLabel } = attributes;
+			const { ariaLabel, htmlAttribute } = attributes;
 
-			const helpMessage = !! ariaLabel
+			let htmlAttributesOptions = [
+				{
+					value: 'aria-label',
+					label: __( 'aria-label', 'gp-block-aria-label' ),
+				},
+				{ value: 'title', label: __( 'Title', 'gp-block-aria-label' ) },
+				{ value: 'both', label: __( 'Both', 'gp-block-aria-label' ) },
+			];
+
+			htmlAttributesOptions = applyFilters(
+				'gp_block_aria-label.html_attributes_options',
+				htmlAttributesOptions
+			);
+
+			const ariaLabelHelpMessage = !! ariaLabel
 				? __( 'Has a aria-label.', 'gp-block-aria-label' )
 				: __( 'No aria-label', 'gp-block-aria-label' );
 
@@ -74,8 +92,24 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 									ariaLabel: nextAriaLabel,
 								} );
 							} }
-							help={ helpMessage }
+							help={ ariaLabelHelpMessage }
 						/>
+
+						{ ariaLabel !== '' && (
+							<SelectControl
+								label={ __(
+									'Attribute to use for label',
+									'gp-block-aria-label'
+								) }
+								value={ htmlAttribute || undefined }
+								options={ htmlAttributesOptions }
+								onChange={ ( newHtmlAttribute ) =>
+									setAttributes( {
+										htmlAttribute: newHtmlAttribute,
+									} )
+								}
+							/>
+						) }
 					</InspectorAdvancedControls>
 				</>
 			);

@@ -21,8 +21,18 @@ $gp_block_aria_label = new class() {
 					$aria_label = $block['attrs']['ariaLabel'] ?? false;
 
 					if ( $aria_label ) {
-						$aria_label    = wp_strip_all_tags( $aria_label );
-						$block_content = str_replace( 'href=', 'aria-label="' . esc_attr( $aria_label ) . '" title="' . esc_attr( $aria_label ) . '" href=', $block_content );
+						$aria_label     = wp_strip_all_tags( $aria_label );
+						$html_attribute = $block['attrs']['htmlAttribute'] ?? 'aria-label';
+
+						switch ( $html_attribute ) {
+							case 'both':
+								// Adds aria-label and title.
+								$block_content = str_replace( 'href=', 'aria-label="' . esc_attr( $aria_label ) . '" title="' . esc_attr( $aria_label ) . '" href=', $block_content );
+								break;
+							default:
+								$block_content = str_replace( 'href=', sanitize_html_class( $html_attribute ) . '="' . esc_attr( $aria_label ) . '" href=', $block_content );
+								break;
+						}
 					}
 				}
 

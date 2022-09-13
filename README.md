@@ -49,3 +49,35 @@ https://wpvip.com/documentation/vip-go/code-review-blockers-warnings-notices/
 
 * [github/german-pichardo](https://github.com/german-pichardo)
 * [http://german-pichardo.com](http://german-pichardo.com)
+
+## Add Additional options
+
+```JavaScript
+/**
+ * Make additional options
+ *
+ * @param {Array} options Available options.
+ *
+ * @return {Array} Filtered options array.
+ */
+function filterButtonAttributesOptions(options) {
+
+  const customOptions = [
+    {
+      value: 'data-title',
+      label: 'Data Title',
+    },
+    {
+      value: 'data-foo-title',
+      label: 'Data Foo Title',
+    },
+  ];
+
+  options = [...options, ...customOptions];
+
+  return options;
+
+}
+
+wp.hooks.addFilter('gp_block_aria-label.html_attributes_options', 'my_namespace.html_attributes_options', filterButtonAttributesOptions);
+```

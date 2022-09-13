@@ -1,0 +1,43 @@
+# Copyright (C) 2022 German PICHARDO-BEER
+# This file is distributed under the same license as the Block Aria Label Extension plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Block Aria Label Extension 0.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gp-block-aria-label\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-09-13T18:47:24+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.5.0\n"
+"X-Domain: gp-block-aria-label\n"
+
+#. Plugin Name of the plugin
+msgid "Block Aria Label Extension"
+msgstr ""
+
+#. Description of the plugin
+msgid "Adds aria label field to Gutenberg Blocks."
+msgstr ""
+
+#. Author of the plugin
+msgid "German PICHARDO-BEER"
+msgstr ""
+
+#: src/extensions/aria-label/index.js:56
+msgid "Has a aria-label."
+msgstr ""
+
+#: src/extensions/aria-label/index.js:57
+msgid "No aria-label"
+msgstr ""
+
+#: src/extensions/aria-label/index.js:66
+msgid "Aria label"
+msgstr ""
+
+#: src/extensions/aria-label/index.js:68
+msgid "Add an aria-label"
+msgstr ""

@@ -48,7 +48,6 @@ https://wpvip.com/documentation/vip-go/code-review-blockers-warnings-notices/
 ### Author
 
 * [github/german-pichardo](https://github.com/german-pichardo)
-* [http://german-pichardo.com](http://german-pichardo.com)
 
 ## Add Additional options
 

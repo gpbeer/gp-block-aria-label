@@ -1,0 +1,1 @@
+import './extensions/aria-label';

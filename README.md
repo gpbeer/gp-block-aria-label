@@ -38,7 +38,7 @@ Add to your `composer.json`
 
 Run
 ```bash
-composer require gp/gp-login-customizer
+composer require gp/gp-block-aria-label
 ```
 
 ### Development wordpress coding helper

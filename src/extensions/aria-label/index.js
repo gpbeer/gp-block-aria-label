@@ -18,14 +18,14 @@ import { createHigherOrderComponent } from '@wordpress/compose';
 import { isAllowedBlock } from './utils';
 
 /**
- * Add custom attribute for mobile visibility.
+ * Add custom attributes.
  *
  * @param {Object} settings Settings for the block.
  *
  * @return {Object} settings Modified settings.
  */
 function addAttributes( settings ) {
-	if ( ! isAllowedBlock( settings.name ) ) {
+	if ( ! isAllowedBlock( settings.name, settings ) ) {
 		return settings;
 	}
 
@@ -40,7 +40,7 @@ function addAttributes( settings ) {
 }
 
 /**
- * Add mobile visibility controls on Advanced Block Panel.
+ * Editor Block Panel.
  *
  * @param {Function} BlockEdit Block edit component.
  *
@@ -50,8 +50,8 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 	return ( props ) => {
 		if ( isAllowedBlock( props.name ) && props.isSelected ) {
 			const { attributes, setAttributes } = props;
-
 			const { ariaLabel } = attributes;
+
 			const helpMessage = !! ariaLabel
 				? __( 'Has a aria-label.', 'gp-block-aria-label' )
 				: __( 'No aria-label', 'gp-block-aria-label' );
@@ -86,7 +86,7 @@ const withInspectorControl = createHigherOrderComponent( ( BlockEdit ) => {
 }, 'withInspectorControl' );
 
 /**
- * Override props assigned to save component to inject the CSS variables definition.
+ * Save hook.
  *
  * @param {Object} props      Additional props applied to save element
  * @param {Object} blockType  Block type
@@ -110,8 +110,7 @@ export function addSaveProps( props, blockType, attributes ) {
 }
 
 /**
- * Filters registered block settings to extand the block edit wrapper
- * to apply the desired styles and classnames properly.
+ * Extends the block edit wrapper.
  *
  * @param {Object} settings Original block settings
  * @return {Object}          Filtered block settings

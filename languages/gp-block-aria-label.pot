@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-09-13T18:47:24+02:00\n"
+"POT-Creation-Date: 2022-09-13T22:04:52+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: gp-block-aria-label\n"
@@ -26,18 +26,34 @@ msgstr ""
 msgid "German PICHARDO-BEER"
 msgstr ""
 
-#: src/extensions/aria-label/index.js:56
+#: src/extensions/aria-label/index.js:62
+msgid "aria-label"
+msgstr ""
+
+#: src/extensions/aria-label/index.js:64
+msgid "Title"
+msgstr ""
+
+#: src/extensions/aria-label/index.js:65
+msgid "Both"
+msgstr ""
+
+#: src/extensions/aria-label/index.js:74
 msgid "Has a aria-label."
 msgstr ""
 
-#: src/extensions/aria-label/index.js:57
+#: src/extensions/aria-label/index.js:75
 msgid "No aria-label"
 msgstr ""
 
-#: src/extensions/aria-label/index.js:66
+#: src/extensions/aria-label/index.js:84
 msgid "Aria label"
 msgstr ""
 
-#: src/extensions/aria-label/index.js:68
+#: src/extensions/aria-label/index.js:86
 msgid "Add an aria-label"
+msgstr ""
+
+#: src/extensions/aria-label/index.js:100
+msgid "Attribute to use for label"
 msgstr ""

@@ -15,7 +15,7 @@
 		}
 	],
 	"support": {
-		"source": "https://github.com/german-pichardo/gp-block-aria-label"
+		"source": "https://github.com/gpbeer/gp-block-aria-label"
 	},
 	"require": {
 		"php": ">=7.3"

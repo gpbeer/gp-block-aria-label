@@ -8,7 +8,7 @@
  * Domain Path:     /languages
  * Tested up to:    6.0.2
  *
- * @link            https://github.com/german-pichardo/gp-block-aria-label
+ * @link            https://github.com/gpbeer/gp-block-aria-label
  * @package         GP\GP_Block_Aria_Label
  */
 

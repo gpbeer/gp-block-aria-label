@@ -31,7 +31,7 @@ Add to your `composer.json`
    ...
     {
       "type": "vcs",
-      "url": "git@github.com:german-pichardo/gp-block-aria-label.git"
+      "url": "git@github.com:gpbeer/gp-block-aria-label.git"
     }
 ],
 ```
@@ -47,7 +47,7 @@ https://wpvip.com/documentation/vip-go/code-review-blockers-warnings-notices/
 
 ### Author
 
-* [github/german-pichardo](https://github.com/german-pichardo)
+* [github/gpbeer](https://github.com/gpbeer)
 
 ## Add Additional options
 

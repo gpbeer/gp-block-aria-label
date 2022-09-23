@@ -13,13 +13,13 @@
 	"browserslist": [
 		"last 40 versions"
 	],
-	"homepage": "https://github.com/german-pichardo/gp-block-aria-label",
+	"homepage": "https://github.com/gpbeer/gp-block-aria-label",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/german-pichardo/gp-block-aria-label"
+		"url": "https://github.com/gpbeer/gp-block-aria-label"
 	},
 	"bugs": {
-		"url": "https://github.com/german-pichardo/gp-block-aria-label/issues"
+		"url": "https://github.com/gpbeer/gp-block-aria-label/issues"
 	},
 	"main": "index.js",
 	"devDependencies": {

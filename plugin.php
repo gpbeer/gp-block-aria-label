@@ -6,7 +6,7 @@
  * Author:          German PICHARDO-BEER
  * Text Domain:     gp-block-aria-label
  * Domain Path:     /languages
- * Tested up to:    6.0.1
+ * Tested up to:    6.0.2
  *
  * @link            https://github.com/german-pichardo/gp-block-aria-label
  * @package         GP\GP_Block_Aria_Label

@@ -27,10 +27,10 @@ $gp_block_aria_label = new class() {
 						switch ( $html_attribute ) {
 							case 'both':
 								// Adds aria-label and title.
-								$block_content = str_replace( 'href=', 'aria-label="' . esc_attr( $aria_label ) . '" title="' . esc_attr( $aria_label ) . '" href=', $block_content );
+								$block_content = str_replace( 'class=', 'aria-label="' . esc_attr( $aria_label ) . '" title="' . esc_attr( $aria_label ) . '" class=', $block_content );
 								break;
 							default:
-								$block_content = str_replace( 'href=', sanitize_html_class( $html_attribute ) . '="' . esc_attr( $aria_label ) . '" href=', $block_content );
+								$block_content = str_replace( 'class=', sanitize_html_class( $html_attribute ) . '="' . esc_attr( $aria_label ) . '" class=', $block_content );
 								break;
 						}
 					}
